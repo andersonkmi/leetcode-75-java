@@ -19,4 +19,11 @@ public class MergeStringsAlternatelyTest {
         String word2 = "";
         assertThat(mergeStringsAlternately.merge(word1, word2)).isEqualTo("");
     }
+
+    @Test
+    void mergeOneNonEmptyStringWithEmptyStringShouldResultOriginalString() {
+        String word1 = "abcde";
+        String word2 = "";
+        assertThat(mergeStringsAlternately.merge(word1, word2)).isEqualTo("abcde");
+    }
 }
