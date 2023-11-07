@@ -41,4 +41,12 @@ public class MergeStringsAlternatelyTest {
         String result = "adbecf";
         assertThat(mergeStringsAlternately.merge(word1, word2)).isEqualTo(result);
     }
+
+    @Test
+    void mergeTwoNonEmptyDifferentLengthStrings() {
+        String word1 = "abc";
+        String word2 = "de";
+        String result = "adbec";
+        assertThat(mergeStringsAlternately.merge(word1, word2)).isEqualTo(result);
+    }
 }
