@@ -1,7 +1,6 @@
 package org.codecraftlabs.leetcode75;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.Vector;
 
 public class ReverseVowels {
@@ -16,11 +15,13 @@ public class ReverseVowels {
         char[] staging = word.toCharArray();
         int middle = originalPositions.length / 2;
         for (int index = 0; index < middle; index++) {
-            int opposite = originalPositions.length - index + 1;
-            char currentChar = staging[index];
-            char otherOne = staging[opposite];
-            staging[index] = otherOne;
-            staging[opposite] = currentChar;
+            int opposite = (originalPositions.length - 1) - index;
+            int pos1 = originalPositions[index];
+            int pos2 = originalPositions[opposite];
+
+            char char1 = staging[pos1];
+            staging[pos1] = staging[pos2];
+            staging[pos2] = char1;
         }
         return new String(staging);
     }

@@ -23,4 +23,24 @@ public class ReverseVowelsTest {
         String word = "red";
         assertThat(reverseVowels.execute(word)).isEqualTo(word);
     }
+
+    @Test
+    void when_passing_two_vowel_word() {
+        String word = "omo";
+        assertThat(reverseVowels.execute(word)).isEqualTo(word);
+    }
+
+    @Test
+    void using_real_word() {
+        String word = "hello";
+        String correct = "holle";
+        assertThat(reverseVowels.execute(word)).isEqualTo(correct);
+    }
+
+    @Test
+    void reverse_leetcode_word() {
+        String word = "leetcode";
+        String correct = "leotcede";
+        assertThat(reverseVowels.execute(word)).isEqualTo(correct);
+    }
 }
